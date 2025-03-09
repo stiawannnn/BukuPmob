@@ -50,7 +50,7 @@ fun BookSearchScreen(viewModel: BooksViewModel = viewModel()) {
 
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
-            contentPadding = PaddingValues(8.dp),
+            contentPadding = PaddingValues(3.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
             modifier = Modifier.fillMaxSize()

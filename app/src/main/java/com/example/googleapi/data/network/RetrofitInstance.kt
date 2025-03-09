@@ -9,8 +9,12 @@ import retrofit2.http.Query
 
 interface GoogleBooksService {
     @GET("volumes")
-    suspend fun searchBooks(@Query("q") query: String): GoogleBooksResponse
+    suspend fun searchBooks(
+        @Query("q") query: String,
+        @Query("maxResults") maxResults: Int = 40
+    ): GoogleBooksResponse
 }
+
 
 object RetrofitInstance {
     val api: GoogleBooksService by lazy {
