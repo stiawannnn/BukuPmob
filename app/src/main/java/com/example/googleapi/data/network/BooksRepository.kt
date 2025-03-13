@@ -3,10 +3,10 @@ import com.example.googleapi.model.VolumeInfo
 
 class BooksRepository(
     private val apiService: GoogleBooksService?,
-    private val useFakeApi: Boolean = false
+    private val useFakeRepo: Boolean = false
 ) {
     suspend fun searchBooks(query: String): List<VolumeInfo> {
-        return if (useFakeApi) {
+        return if (useFakeRepo) {
             fakeBooks()
         } else {
             apiService?.searchBooks(query)?.items?.map { it.volumeInfo } ?: emptyList()
@@ -14,6 +14,6 @@ class BooksRepository(
     }
 
     private fun fakeBooks(): List<VolumeInfo> {
-        return FakeBooksApi.getFakeBooks()
+        return FakeBooksRepo.getFakeBooks()
     }
 }

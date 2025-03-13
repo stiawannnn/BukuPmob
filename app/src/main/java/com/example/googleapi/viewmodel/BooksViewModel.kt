@@ -11,12 +11,12 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class BooksViewModel(
-    useFakeApi: Boolean = false
+    useFakeRepo: Boolean = false
 ) : ViewModel() {
 
     private val repository = BooksRepository(
-        apiService = if (useFakeApi) null else RetrofitInstance.api,
-        useFakeApi = useFakeApi
+        apiService = if (useFakeRepo) null else RetrofitInstance.api,
+        useFakeRepo = useFakeRepo
     )
 
     private val _books = MutableStateFlow<List<VolumeInfo>>(emptyList())

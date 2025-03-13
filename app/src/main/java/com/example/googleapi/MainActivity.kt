@@ -12,8 +12,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
-                //ganti true flase untuk pake api asli atau fake
-                BookSearchScreen(viewModel = BooksViewModel(useFakeApi = false))
+                //ganti true flase untuk pake api asli atau layanan plasu
+                BookSearchScreen(viewModel = BooksViewModel(useFakeRepo = false))
             }
         }
 

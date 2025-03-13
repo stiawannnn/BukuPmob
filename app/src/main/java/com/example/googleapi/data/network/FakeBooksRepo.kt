@@ -3,7 +3,7 @@ package com.example.googleapi.data.network
 import com.example.googleapi.model.ImageLinks
 import com.example.googleapi.model.VolumeInfo
 
-object FakeBooksApi {
+object FakeBooksRepo {
     fun getFakeBooks(): List<VolumeInfo> {
         return listOf(
             VolumeInfo(
